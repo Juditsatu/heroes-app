@@ -12,15 +12,11 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: 'listado',
+        path: 'list',
         component: ListComponent
       },
       {
         path: 'agregar',
-        component: AgregarComponent
-      },
-      {
-        path: 'editar/:id',
         component: AgregarComponent
       },
       {
@@ -37,7 +33,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'listado'
+        redirectTo: 'list'
       }
     ]
   }
