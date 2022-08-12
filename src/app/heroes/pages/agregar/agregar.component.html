@@ -70,14 +70,16 @@
             <button mat-raised-button 
             color="primary"
             (click)="guardar()">
-        <mat-icon>add_circle</mat-icon>
-            Guardar
+        <mat-icon>edit</mat-icon>
+            {{ (heroe.id) ? 'Actualizar' : 'Crear'}}
         </button>
+
+        <span class="spacer"></span>
 
         <button *ngIf="heroe.id"
                 mat-raised-button 
                 color="warn"
-                (click)="borrar()">
+                (click)="borrarHeroe()">
             <mat-icon>remove</mat-icon>
             Borrar
         </button>
