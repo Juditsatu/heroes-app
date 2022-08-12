@@ -1,4 +1,8 @@
-<h1>Nuevo Héroe</h1>
+<h1>
+    {{ ( heroe.id )? 'Editar' : 'Nuevo' }}
+    Héroe
+    <small>{{ heroe.superhero }}</small> 
+</h1>
 
 <div fxLayout="row"
      fxLayout.xs="column"
@@ -62,13 +66,23 @@
         </mat-form-field>
 
         <br>
-
-        <button mat-raised-button 
-                color="primary"
-                (click)="guardar()">
-            <mat-icon>add_circle</mat-icon>
+        <div fxLayout>
+            <button mat-raised-button 
+            color="primary"
+            (click)="guardar()">
+        <mat-icon>add_circle</mat-icon>
             Guardar
         </button>
+
+        <button *ngIf="heroe.id"
+                mat-raised-button 
+                color="warn"
+                (click)="borrar()">
+            <mat-icon>remove</mat-icon>
+            Borrar
+        </button>
+        </div>
+        
 
     </div>
 
